@@ -526,7 +526,7 @@ for (c in names(table(mergedColors))) {
 library(magrittr)
 library(clusterProfiler)
 
-# reactomeでやろう
+# reactome
 library(ReactomePA)
 
 mart <- useDataset("hsapiens_gene_ensembl", useMart("ensembl"))
