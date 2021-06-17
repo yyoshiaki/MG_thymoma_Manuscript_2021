@@ -583,7 +583,7 @@ dev.off()
 
 
 for (c in names(table(mergedColors))) {
-  genes <- read.csv(file = paste("200703_DSeq2WGCNA/",c,".txt", sep = ""))
+  genes <- read.csv(file = paste("200703_DSeq2WGCNA/",c,".txt", sep = "", header=FALSE))
   q <- getBM(filters="hgnc_symbol", attributes=c("entrezgene_id", "hgnc_symbol"), values=genes, mart=mart, )
   genes.entrez <- q$entrezgene_id
   genes.entrez <- genes.entrez[!is.na(genes.entrez)]
@@ -598,7 +598,7 @@ for (c in names(table(mergedColors))) {
 print(c)
   }
 c <- "yellow"
-genes <- read.csv(file = paste("200703_DSeq2WGCNA/",c,".txt", sep = ""))
+genes <- read.csv(file = paste("200703_DSeq2WGCNA/",c,".txt", sep = "", header=FALSE))
 q <- getBM(filters="hgnc_symbol", attributes=c("entrezgene_id", "hgnc_symbol"), values=genes, mart=mart, )
 genes.entrez <- q$entrezgene_id
 genes.entrez <- genes.entrez[!is.na(genes.entrez)]
